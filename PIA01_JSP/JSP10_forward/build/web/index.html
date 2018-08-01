@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <H2>Objednávkový formulář</H2>
+        <form action="procesForward2.jsp" method="POST">
+            <table cellspacing="2" cellpadding="3" border="1" width="70%">
+                <thead>
+                    <tr>
+                        <th>Položka</th>
+                        <th>Počet</th>
+                        <th>Cena za kus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="33%">Třička</td>
+                        <td width="33%"><input type="text" name="shirt" value="0" size="3"/></td>
+                        <td width="34%">200Kč</td>
+                    </tr>
+                    <tr>
+                        <td>Klobouky</td>
+                        <td><input type="text" name="hat" value="0" size="3"/></td>
+                        <td>400Kč</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Bydlíte v pardubicích? </p> 
+            <input type="radio" name="pce" value="true" /> Ano
+            <input type="radio" name="pce" value="false" /> Ne
+
+            <input type="submit" name="ok" value="Odeslat objednavku" />
+            <input type="reset" name="res" value="vynulovat"/>
+        </form>
+    </body>
+</html>
