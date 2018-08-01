@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="./template.xhtml">
+        <ui:define name="top">
+            <h2>&nbsp;&nbsp;Informace o zákaznicích</h2>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form id="form">
+                <h:panelGrid columns="1" style="width: 100%">
+                    <p:wizard id="wizard">
+                        <p:tab title="Osobní  informace" id="personalInfo">
+                            <p:panel header="Osobní informace">
+                                <p:messages/>
+                                <h:panelGrid columns="2">
+
+                                    <h:outputLabel for="firstName" 
+                                                   value="Jméno" 
+                                                   styleClass="requiredLbl"/>
+                                    <h:inputText id="firstName" 
+                                                 label="Jméno" 
+                                                 value="#{customer.firstName}" 
+                                                 required="true"/>
+                                    <h:outputLabel for="middleName" 
+                                                   value="Přezdívka" 
+                                                   styleClass="optionalLbl"/>
+                                    <h:inputText id="middleName" 
+                                                 label="Přezdívka" 
+                                                 value="#{customer.middleName}"
+                                                 />
+                                    <h:outputLabel for="lastName" 
+                                                   value="Příjmení" 
+                                                   styleClass="requiredLbl"/>
+                                    <h:inputText id="lastName" 
+                                                 label="Příjmení" 
+                                                 value="#{customer.lastName}" 
+                                                 required="true"/>
+                                    <h:outputLabel for="birthDate" 
+                                                   value="Datum nar." 
+                                                   styleClass="optionalLbl"/>
+                                    <p:calendar id="birthDate" 
+                                                value="#{customer.birthDate}" 
+                                                showOn="button" 
+                                                navigator="true"/>
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+                        <p:tab title="Telefoní čísla" id="phone">
+                            <p:panel header="Telefoní čísla">
+                                <p:messages/>
+                                <h:panelGrid columns="2">
+                                    <h:outputLabel for="homePhone" 
+                                                   value="Pevná linka"/>
+                                    <p:inputMask id="homePhone" 
+                                                 mask="(999)-999-9999" 
+                                                 value="#{customer.homePhone}" 
+                                                 size="12" 
+                                                 styleClass="optionalLbl"/>
+
+                                    <h:outputLabel for="mobilePhone" 
+                                                   value="Mobil"/>
+                                    <p:inputMask id="mobilePhone" 
+                                                 mask="(999)-999-9999" 
+                                                 value="#{customer.mobilePhone}" 
+                                                 size="12" 
+                                                 styleClass="optionalLbl"/>
+
+                                    <h:outputLabel for="workPhone" 
+                                                   value="Mobil práce"/>
+                                    <p:inputMask id="workPhone" 
+                                                 mask="(999)-999-9999" 
+                                                 value="#{customer.workPhone}" 
+                                                 size="12" 
+                                                 styleClass="optionalLbl"/>
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+                        <p:tab title="Potvrzení" id="confirmation">
+                            <p:messages/>
+                            <h:panelGrid columns="2">
+                                <h:outputText value="Jméno" 
+                                              styleClass="optionalLbl"/>
+                                <h:outputText id="firstNameTxt" 
+                                              value="#{customer.firstName}" />
+                                <h:outputText value="Alias" 
+                                              styleClass="optionalLbl"/>
+                                <h:outputText id="middleNameTxt" 
+                                              value="#{customer.middleName}"/>
+                                <h:outputText  value="Příjmení" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="lastNameTxt" 
+                                              value="#{customer.lastName}" />
+                                <h:outputText  value="Datum narození" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="birthDateTxt" 
+                                              value="#{customer.
+                                                       formattedBirthDate}" />
+
+                                <h:outputText  value="Pevná linka" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="homePhoneTxt" 
+                                              value="#{customer.homePhone}" />
+
+                                <h:outputText  value="Mobil" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="mobilePhoneTxt" 
+                                              value="#{customer.mobilePhone}" />
+                                <h:outputText  value="Mobil - práce" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="workPhoneTxt" 
+                                              value="#{customer.workPhone}" />
+
+                                <h:panelGroup/>
+                                <h:inputHidden value="#{customer.addrState}"/>
+                                <p:commandButton id="submitButton"
+                                                 value="Ulož" 
+                                                 actionListener=
+                                                 "#{customerController.saveCustomer}" 
+                                                 ajax="false"/>
+                            </h:panelGrid>
+                        </p:tab>
+                    </p:wizard>                   
+                </h:panelGrid>
+            </h:form>
+        </ui:define> 
+    </ui:composition>
+</html>

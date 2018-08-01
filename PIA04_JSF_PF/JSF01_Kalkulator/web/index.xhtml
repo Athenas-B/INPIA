@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Kalkulačka </title>
+    </h:head>
+    <h:body>
+        <h3>Kalkulačka JSF Netbeans</h3>
+        <f:view>
+            <!-- 
+            <h:form>
+                <h4>Kalkulačka</h4>
+                <h:outputLabel value="Num 1:"/>
+                <h:inputText id="param1"/>
+                <br/>
+                <h:outputLabel value="Num 2:"/>
+                <h:inputText id="param2"/>
+                <br/>
+                <h:commandButton value="add"/>
+                <h:commandButton value="sub"/>
+                <h:commandButton value="mul"/>
+                <h:commandButton value="div"/>
+                <br/><br/>
+                <h:outputLabel value="Result:"/>
+                <h:outputText id="result"/>
+            </h:form> -->
+            <h:form id="kalkulator">
+                <h4>Kalkulačka</h4>
+                <h:outputLabel for="param1" value="Num 1:"/>
+                <h:inputText id="param1" value="#{kalkulatorBean.param1}"/>
+                <br/>
+                <h:outputLabel for="param2" value="Num 2:"/>
+                <h:inputText id="param2" value="#{kalkulatorBean.param2}"/>
+                <br/>
+                <h:commandButton value="ADD" action="#{kalkulatorBean.add()}"/>
+                <h:commandButton value="sub" action="#{kalkulatorBean.sub()}"/>
+                <h:commandButton value="mul" action="#{kalkulatorBean.mul()}"/>
+                <h:commandButton value="div" action="#{kalkulatorBean.divi()}"/>
+                <br/><br/>
+                <h:outputLabel value="Result:" for="result"/>
+                <h:outputText id="result" value="#{kalkulatorBean.result}"/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

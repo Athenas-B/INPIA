@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Confirmation</title>
+    </h:head>
+    <h:body>
+        <h2>Potvrzení</h2>
+        <h:panelGrid columns="2" columnClasses="rightalign-bold,normal">
+            <h:outputText value="Titul: "/>
+                ${registrationBean.title}
+                <h:outputText value="Jméno:" />
+                ${registrationBean.firstName}
+                <h:outputText value="Příjmení:"/>
+                ${registrationBean.lastName}
+                <h:outputText value="Stáří:"/>
+                ${registrationBean.age}
+                <h:outputText value="E-mail:"/>
+                ${registrationBean.email}
+                
+        
+        </h:panelGrid>
+        <h:outputText value="Celé jméno"/>
+                ${registrationBean.fullName}
+        <h:outputText value="toString"/>
+                ${registrationBean.toString()}
+    </h:body>
+</html>
