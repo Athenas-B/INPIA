@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Můj účet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>Můj účet</h3>
+        <form action="setUcet.jsp">
+            <table cellspacing="2" cellpadding="3" border="1" width="52%">
+                <tr>
+                    <td width="30%">Jméno:</td>
+                    <td width="70%">
+                        <input type="text" name="jmeno" size="20"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">Číslo účtu:</td>
+                    <td width="70%">
+                        <input type="text" name="ucet" size="10"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">Hotovost:</td>
+                    <td width="70%">
+                        <input type="text" name="hotovost" value="0" size="10"/>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" name="ok" value="potvrdit"/>
+            <input type="reset" name="res" value="zpět"/>
+            <input type="button" value="Výpis účtu" onclick="window.open('getUcet.jsp')"/>
+
+        </form>
+    </body>
+</html>
